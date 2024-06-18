@@ -1,0 +1,22 @@
+@using Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = null;
+    var site = Model.AncestorOrSelf<Site>();
+}
+
+@* @if (site is not null) *@
+@* { *@
+@*     @foreach (var menuItem in site.Menu) *@
+@*     { *@
+@*         if (menuItem is BlockListItem<MenuItem> menu) *@
+@*         { *@
+@*             @await Html.PartialAsync("~/Views/Partials/Partial.cshtml", menu); *@
+@*         } *@
+@*     } *@
+@* } *@
+
+
+
+
+@RenderBody()

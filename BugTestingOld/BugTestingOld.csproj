@@ -1,0 +1,94 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms" Version="13.3.0" />
+    <PackageReference Include="uSync" Version="13.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Opt-in to app-local ICU to ensure consistent globalization APIs across different platforms -->
+    <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
+    <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="72.1.0.3" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\ContentTypes\menuitem.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\ContentTypes\page.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\ContentTypes\productplaceholder.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\ContentTypes\site.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\Content\page.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\Content\productplaceholder.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\Content\site.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\ApprovedColor.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\CheckboxList.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\ContentPicker.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\DatePicker.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\DatePickerWithTime.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\Dropdown.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\DropdownMultiple.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\ImageCropper.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\ImageMediaPicker.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\LabelBigint.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\LabelDatetime.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\LabelDecimal.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\LabelInteger.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\LabelString.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\LabelTime.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\ListViewContent.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\ListViewMedia.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\ListViewMembers.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\MediaPicker.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\MediaPickerLegacy.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\MemberPicker.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\MultipleImageMediaPicker.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\MultipleMediaPicker.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\MultipleMediaPickerLegacy.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\MultiURLPicker.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\Numeric.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\Radiobox.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\RichtextEditor.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\SiteMenuBlockList.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\Tags.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\Textarea.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\Textstring.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\Truefalse.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\UploadArticle.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\UploadAudio.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\UploadFile.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\UploadVectorGraphics.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\DataTypes\UploadVideo.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\Domains\da_da.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\Domains\da_en-us.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\Domains\_en-us.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\Languages\da.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\Languages\en-us.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\MediaTypes\file.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\MediaTypes\folder.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\MediaTypes\image.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\MediaTypes\umbracomediaarticle.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\MediaTypes\umbracomediaaudio.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\MediaTypes\umbracomediavectorgraphics.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\MediaTypes\umbracomediavideo.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\MemberTypes\member.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\Templates\page.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\Templates\productplaceholder.config" />
+    <_ContentIncludedByDefault Remove="uSync\uSync\v9\usync.config" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- Razor files are needed for the backoffice to work correctly -->
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Remove RazorCompileOnBuild and RazorCompileOnPublish when not using ModelsMode InMemoryAuto -->
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <RazorCompileOnPublish>false</RazorCompileOnPublish>
+  </PropertyGroup>
+
+</Project>

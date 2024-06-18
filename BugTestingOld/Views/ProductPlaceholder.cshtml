@@ -1,0 +1,9 @@
+﻿@model BugTestingOld.Models.ProductViewModel
+@{
+	Layout = "Master.cshtml";
+}
+
+<h1>Product sku: @Model.Sku</h1>
+
+<p>Culture: @Model.GetCultureFromDomains()</p>
+<p>Pagename: @Model.Name</p>
